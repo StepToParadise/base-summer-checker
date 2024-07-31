@@ -28,10 +28,10 @@ def log_totals(total_referrals, total_score, rank_stats):
     with open('result.log', 'a') as file:
         file.write(f"\nTotal Referrals: {total_referrals}\n")
         file.write(f"Total Score: {total_score}\n")
-        file.write(f"Rank 0 - 10000: {rank_stats['0-10000']}\n")
+        file.write(f"\nRank 0 - 10000: {rank_stats['0-10000']}\n")
         file.write(f"Rank 10000 - 30000: {rank_stats['10000-30000']}\n")
         file.write(f"Rank 30000 - 100000: {rank_stats['30000-100000']}\n")
-        file.write(f"Rank 100000+: {rank_stats['100000+']}\n")
+        file.write(f"Rank 100000+: {rank_stats['100000+']}\n\n")
 
 def main():
     wallets = read_wallets('wallets.txt')
@@ -72,12 +72,12 @@ def main():
         # Случайная задержка от 1 до 10 секунд между запросами
         time.sleep(random.randint(1, 10))
 
-    print(f"Total Referrals: {total_referrals}")
-    print(f"Total Score: {total_score}")
+    print(f"\nTotal Referrals: {total_referrals}")
+    print(f"Total Score: {total_score}\n")
     print(f"Rank 0 - 10 000: {rank_stats['0-10000']}")
     print(f"Rank 10 000 - 30 000: {rank_stats['10000-30000']}")
     print(f"Rank 30 000 - 100 000: {rank_stats['30000-100000']}")
-    print(f"Rank 100 000+: {rank_stats['100000+']}")
+    print(f"Rank 100 000+: {rank_stats['100000+']}\n")
 
     log_totals(total_referrals, total_score, rank_stats)
 
